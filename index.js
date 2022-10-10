@@ -5,6 +5,9 @@ const { context, GitHub } = require("@actions/github");
 
 async function run() {
     const trigger = core.getInput("trigger", { required: true });
+    console.log("test...");
+    console.log(trigger);
+    console.log("test...");
 
     const reaction = core.getInput("reaction");
     const { GITHUB_TOKEN } = process.env;

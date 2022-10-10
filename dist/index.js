@@ -1916,6 +1916,7 @@ const { context, GitHub } = __webpack_require__(803);
 
 async function run() {
     const trigger = core.getInput("trigger", { required: true });
+    core.setOutput("test1", "12311aa");
 
     const reaction = core.getInput("reaction");
     const { GITHUB_TOKEN } = process.env;

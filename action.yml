@@ -15,8 +15,10 @@ inputs:
 outputs:
   triggered:
     description: the string 'true' if the trigger was found, otherwise the string 'false'
-  test1:
-    description: test
+  url:
+    description: all or urls
+  query:
+    description: many or small
   comment_body:
     description: The comment body.
 runs:

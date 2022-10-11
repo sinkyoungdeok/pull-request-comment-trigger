@@ -20,7 +20,16 @@ async function run() {
             // For the initial pull request description
             : context.payload.pull_request.body) || '';
     core.setOutput('comment_body', body);
-    core.setOutput("test1", body);
+    core.setOutput("url", "all");
+    core.setOutput("query", "many");
+    const splitData = body.split(" ");
+    if (splitData.length >= 2) {
+        core.setOutput("url", splitData[1]);
+    }
+
+    if (splitData.length == 3 && (splitData[2] == "small" || splitData[2] == "many")) {
+        core.setOutput("query", splitData[2]);
+    }
 
     if (
         context.eventName === "issue_comment" &&

@@ -31,6 +31,7 @@ async function run() {
 
     for (const i in params) {
         const splitData = i.split(":");
+        core.setOutput("runtime", i);
         if (splitData[0] == "url") {
             core.setOutput("url", splitData[1]);
         } else if (splitData[0] == "query") {

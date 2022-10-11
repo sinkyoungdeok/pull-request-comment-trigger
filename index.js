@@ -5,7 +5,6 @@ const { context, GitHub } = require("@actions/github");
 
 async function run() {
     const trigger = core.getInput("trigger", { required: true });
-    core.setOutput("test1", trigger);
 
     const reaction = core.getInput("reaction");
     const { GITHUB_TOKEN } = process.env;
@@ -21,6 +20,7 @@ async function run() {
             // For the initial pull request description
             : context.payload.pull_request.body) || '';
     core.setOutput('comment_body', body);
+    core.setOutput("test1", body);
 
     if (
         context.eventName === "issue_comment" &&

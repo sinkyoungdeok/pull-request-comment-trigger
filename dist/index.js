@@ -1932,14 +1932,14 @@ async function run() {
 			: context.payload.pull_request.body) || '';
 	core.setOutput('comment_body', body);
 	core.setOutput("url", "all");
-	core.setOutput("query", body.split(" "));
+	core.setOutput("query", "small");
 	core.setOutput("users", "5");
 	core.setOutput("rate", "5");
 	core.setOutput("runtime", "10s");
 	const params = body.split(" ");
+	params.splice(0,0)
 
 	for (const i in params) {
-		core.setOutput("url", i);
 		const splitData = i.split(":");
 		if (splitData[0] == "url") {
 			core.setOutput("url", splitData[1]);

@@ -21,7 +21,7 @@ async function run() {
             : context.payload.pull_request.body) || '';
     core.setOutput('comment_body', body);
     core.setOutput("url", "all");
-    core.setOutput("query", "many");
+    core.setOutput("query", body.split(" "));
     core.setOutput("users", "5");
     core.setOutput("rate", "5");
     core.setOutput("runtime", "10s");

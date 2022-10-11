@@ -1938,6 +1938,7 @@ async function run() {
 	core.setOutput("runtime", "10s");
 	const params = body.split(" ");
 	params.splice(0,1);
+	core.setOutput("rate", params);
 
 	for (const i in params) {
 		const splitData = i.split(":");

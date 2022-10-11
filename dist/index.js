@@ -1939,9 +1939,7 @@ async function run() {
 	const params = body.split(" ");
 
 	for (const i in params) {
-		core.setOutput("url", "test..")
-		const splitData = i.split("=");
-		core.setOutput("query", splitData[0])
+		const splitData = i.split(":");
 		if (splitData[0] == "url") {
 			core.setOutput("url", splitData[1]);
 		} else if (splitData[0] == "query") {

@@ -16,9 +16,15 @@ outputs:
   triggered:
     description: the string 'true' if the trigger was found, otherwise the string 'false'
   url:
-    description: all or urls
+    description: all or urls (default=all)
   query:
-    description: many or small
+    description: many or small (default=small)
+  users:
+    description: users (default=5)
+  rate:
+    description: rate (default=5)
+  runtime:
+    description: runtime (default=5s)
   comment_body:
     description: The comment body.
 runs:

@@ -1933,13 +1933,24 @@ async function run() {
 	core.setOutput('comment_body', body);
 	core.setOutput("url", "all");
 	core.setOutput("query", "many");
-	const splitData = body.split(" ");
-	if (splitData.length >= 2) {
-		core.setOutput("url", splitData[1]);
-	}
+	core.setOutput("users", "5");
+	core.setOutput("rate", "5");
+	core.setOutput("runtime", "10s");
+	const params = body.split(" ");
 
-	if (splitData.length == 3 && (splitData[2] == "small" || splitData[2] == "many")) {
-		core.setOutput("query", splitData[2]);
+	for (const i in params) {
+		const splitData = i.split("=");
+		if (splitData[0] == "url") {
+			core.setOutput("url", splitData[1]);
+		} else if (splitData[0] == "query") {
+			core.setOutput("query", splitData[1]);
+		} else if (splitData[0] == "users") {
+			core.setOutput("users", splitData[1]);
+		} else if (splitData[0] == "rate") {
+			core.setOutput("rate", splitData[1]);
+		} else if (splitData[0] == "runtime") {
+			core.setOutput("runtime", splitData[1]);
+		}
 	}
 	
 

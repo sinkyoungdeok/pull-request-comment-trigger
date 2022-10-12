@@ -20,11 +20,11 @@ outputs:
   query:
     description: many or small (default=small)
   users:
-    description: users (default=5)
+    description: users (default=250)
   rate:
-    description: rate (default=5)
+    description: rate (default=0.5)
   runtime:
-    description: runtime (default=5s)
+    description: runtime (default=60s)
   comment_body:
     description: The comment body.
 runs:

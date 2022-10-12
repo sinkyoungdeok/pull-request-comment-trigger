@@ -1933,9 +1933,9 @@ async function run() {
 	core.setOutput('comment_body', body);
 	core.setOutput("url", "all");
 	core.setOutput("query", "small");
-	core.setOutput("users", "5");
-	core.setOutput("rate", "5");
-	core.setOutput("runtime", "10s");
+	core.setOutput("users", "250");
+	core.setOutput("rate", "0.5");
+	core.setOutput("runtime", "60s");
 	const params = body.split(" ");
 	params.splice(0,1);
 
